@@ -218,7 +218,7 @@ module Aws
         sigv4_headers = {}
         sigv4_headers['host'] = host(url)
         sigv4_headers['x-amz-date'] = datetime
-        sigv4_headers['x-amz-security-token'] = creds.session_token if creds.session_token
+        # sigv4_headers['x-amz-security-token'] = creds.session_token if creds.session_token
         sigv4_headers['x-amz-content-sha256'] ||= content_sha256 if @apply_checksum_header
 
         headers = headers.merge(sigv4_headers) # merge so we do not modify given headers hash
