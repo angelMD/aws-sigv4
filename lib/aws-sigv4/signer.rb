@@ -667,7 +667,7 @@ module Aws
       end
 
       def credentials_set?(credentials)
-        puts credentials.inspect
+        Rails.logger.info credentials.inspect
         return true
         # credentials.access_key_id && credentials.secret_access_key
       end
